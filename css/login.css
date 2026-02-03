@@ -131,37 +131,41 @@ button[id="btnPista"]:nth-of-type(2) {
     to { opacity: 1; transform: translateY(0); }
 }
 @media (max-width: 600px) {
-    /* Convertimos el main en un contenedor flex vertical */
+    /* Centramos el contenedor y le damos un ancho fijo para que no choque con los botones */
     main {
+        width: 100%;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        justify-content: center;
+        position: relative;
     }
 
     fieldset {
-        padding: 20px;
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        order: 1; /* El formulario va primero */
+        padding: 25px 65px 25px 20px; /* Dejamos 65px de espacio a la derecha */
+        width: 85%; /* No llega al 100% para que el botón de pista no se salga */
+        max-width: 280px; /* Ajuste para móviles estrechos */
     }
 
-    /* Estilizamos los botones de pista para que se vean como enlaces o botones normales */
+    /* Ajustamos los botones de pista para que sigan siendo absolutos pero en posición móvil */
     button[id="btnPista"] {
-        position: static !important; /* Anulamos el absolute */
-        margin-top: 10px;
-        width: 80%; /* Para que sea fácil de pulsar con el dedo */
-        order: 2; /* Los botones de pista aparecen después del fieldset */
+        position: absolute;
+        left: auto; /* Reseteamos el left del PC */
+        right: 15px; /* Los pegamos al borde derecho del contenedor main */
+        width: 60px; /* Un poco más estrechos para que quepan bien */
+        padding: 5px;
+        font-size: 9px;
     }
 
-    /* El botón de entrar va al final */
-    #btnEnviarInfo {
-        order: 3;
-        width: 80%;
+    /* Ajuste de altura para Login (Móvil) */
+    button[id="btnPista"]:nth-of-type(1) {
+        top: 72px; 
     }
 
-    /* OPCIONAL: Si quieres que las pistas aparezcan JUSTO debajo de su input, 
-       la única forma sin tocar HTML es mantener el absolute pero con valores 
-       ajustados al centro, aunque es arriesgado por los distintos tamaños de móvil. */
+    /* Ajuste de altura para Contraseña (Móvil) */
+    button[id="btnPista"]:nth-of-type(2) {
+        top: 152px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
 }
