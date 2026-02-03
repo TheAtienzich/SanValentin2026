@@ -131,23 +131,37 @@ button[id="btnPista"]:nth-of-type(2) {
     to { opacity: 1; transform: translateY(0); }
 }
 @media (max-width: 600px) {
+    /* Convertimos el main en un contenedor flex vertical */
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     fieldset {
-        padding: 20px; /* Quitamos el espacio extra de la derecha */
+        padding: 20px;
         width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 1; /* El formulario va primero */
     }
 
-    /* Movemos las pistas debajo de los inputs para que no se salgan de la pantalla */
-    button[id="btnPista"]:nth-of-type(1),
-    button[id="btnPista"]:nth-of-type(2) {
-        position: relative; /* Cambia de absoluto a relativo */
-        top: 0;
-        left: 0;
+    /* Estilizamos los botones de pista para que se vean como enlaces o botones normales */
+    button[id="btnPista"] {
+        position: static !important; /* Anulamos el absolute */
         margin-top: 10px;
-        display: inline-block;
-        width: auto;
+        width: 80%; /* Para que sea fácil de pulsar con el dedo */
+        order: 2; /* Los botones de pista aparecen después del fieldset */
     }
 
-    header h1 {
-        font-size: 2rem;
+    /* El botón de entrar va al final */
+    #btnEnviarInfo {
+        order: 3;
+        width: 80%;
     }
+
+    /* OPCIONAL: Si quieres que las pistas aparezcan JUSTO debajo de su input, 
+       la única forma sin tocar HTML es mantener el absolute pero con valores 
+       ajustados al centro, aunque es arriesgado por los distintos tamaños de móvil. */
 }
