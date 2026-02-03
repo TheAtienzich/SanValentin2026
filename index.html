@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>login</title>
+        <link rel="stylesheet" href="css/login.css">
+    </head>
+    <body>
+        <main>
+            <form>
+                <fieldset>
+                    <legend>2026</legend>
+                    <label for="login">LOGIN</label>
+                    <br>
+                    <input type="text" id="login">
+                    <br><br>
+                    <label for="password">CONTRASEÑA</label>
+                    <br>
+                    <input type="password" id="password" required>
+                </fieldset>
+            </form>
+            <button type="button" id="btnPista" onclick="enseñarPista1()">
+                <strong>PISTA</strong>
+            </button>
+            <button type="button" id="btnPista" onclick="enseñarPista2()">
+                <strong>PISTA</strong>
+            </button>
+            <button type="button" id="btnEnviarInfo" onclick="comprobar()">
+                <strong>ENTRAR</strong>
+            </button>
+
+            <script src="javascript/login.js"></script>
+        </main>
+    </body>
+</html>

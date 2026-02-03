@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFB3B3; /* Rojo Pastel */
+    color: #1E2A38;
+    overflow-x: hidden;
+}
+
+/* HEADER CENTRADO */
+header {
+    height: 60vh; /* Ocupa buena parte de la pantalla inicial */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header h1 strong {
+    color: #d63031; /* Un rojo más intenso para San Valentin */
+}
+
+header h5 {
+    font-weight: 400;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* NAVEGACIÓN Y SECCIONES */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+nav div {
+    width: 100%;
+    min-height: 400px; /* Altura de cada sección */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    position: relative;
+    
+    /* Línea divisoria superior */
+    border-top: 2px solid rgba(253, 254, 254, 0.5); 
+    
+    /* Configuración para tus futuras imágenes de fondo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; /* Efecto Parallax suave */
+    
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    background-blend-mode: overlay; /* Mezcla el color con la foto */
+    
+    color: white;
+}
+
+/* EFECTO DE AMPLIACIÓN AL PASAR EL RATÓN */
+nav div:hover {
+    transform: scale(1.02);
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* ESTILO DE LOS TEXTOS DENTRO DE LOS DIVS */
+nav div a {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #FFFFFF; /* Blanco puro */
+    text-decoration: none;
+    margin-bottom: 10px;
+    /* Sombra de texto para dar profundidad */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); 
+    text-transform: uppercase; /* Opcional: queda muy bien en títulos */
+}
+
+/* MODIFICA EL PÁRRAFO <p> */
+nav div p {
+    font-size: 1.1rem;
+    color: #FFFFFF;
+    max-width: 700px;
+    line-height: 1.5;
+    /* Un fondo oscuro muy sutil para el bloque de texto */
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px 25px;
+    border-radius: 10px;
+    backdrop-filter: blur(2px); /* Difumina un poco la foto detrás del texto */
+}
+
+/* AQUÍ PODRÁS PONER TUS IMÁGENES MÁS TARDE */
+#mvps { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../imagenes/mvpbanner.webp'); }
+#campeonatos { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../imagenes/amor.jpeg'); }
+#amor { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../imagenes/campeonatos.jpeg'); }
+#making { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../imagenes/making.webp'); }
+
+@media (max-width: 768px) {
+    /* Ajustamos el header para que el texto no sea gigante */
+    header {
+        height: 50vh;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header h5 {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Ajustamos las secciones de las imágenes */
+    nav div {
+        min-height: 350px; /* Un poco más bajas para que no haya que hacer tanto scroll */
+        padding: 20px;
+        /* IMPORTANTE: En móvil el efecto "fixed" a veces falla, lo ponemos normal */
+        background-attachment: scroll; 
+    }
+
+    nav div a {
+        font-size: 1.8rem; /* Letras un poco más pequeñas */
+    }
+
+    nav div p {
+        font-size: 0.9rem;
+        width: 100%; /* Que ocupe todo el ancho disponible */
+    }
+
+    /* Reducimos la animación de ampliación para que no sea molesta al tocar con el dedo */
+    nav div:hover {
+        transform: scale(1.01);
+    }
+}

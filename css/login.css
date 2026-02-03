@@ -1,0 +1,153 @@
+/* Importando fuente similar a San Francisco */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Inter", sans-serif;
+    color: #2C3E50; /* Un azul grafito elegante */
+    transition: all 0.3s ease; /* Transiciones suaves para todo */
+}
+
+body {
+    background-color: #FFB3B3; /* Rojo Pastel */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+main {
+    position: relative;
+    padding: 10px;
+}
+
+fieldset {
+    border: 2px solid #2C3E50;
+    border-radius: 15px;
+    padding: 30px 90px 30px 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px); /* Efecto cristalmerengue */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 15px;
+    letter-spacing: 3px;
+    background: #FFB3B3;
+    border-radius: 5px;
+}
+
+/* --- EFECTOS EN INPUTS --- */
+
+input {
+    border: 1.5px solid #2C3E50;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    outline: none;
+}
+
+input:focus {
+    background: #ffffff;
+    box-shadow: 0 0 15px rgba(44, 62, 80, 0.2);
+    transform: scale(1.02);
+    border-color: #1E2A38;
+}
+
+/* --- BOTONES DE PISTA (Posicionamiento) --- */
+
+button[id="btnPista"], button[id="btnPista"] strong{
+    position: absolute;
+    padding: 6px 12px;
+    font-size: 11px;
+    cursor: pointer;
+    background-color: #2C3E50;
+    color: white;
+    border: none;
+    border-radius: 20px; /* Estilo más redondeado tipo píldora */
+    font-weight: bold;
+}
+
+button[id="btnPista"]:hover {
+    background-color: #1E2A38;
+    box-shadow: 0 0 10px rgba(44, 62, 80, 0.4);
+    letter-spacing: 1px;
+}
+
+/* Alineación con los inputs */
+button[id="btnPista"]:nth-of-type(1) {
+    top: 85px; 
+    left: 235px; 
+}
+
+button[id="btnPista"]:nth-of-type(2) {
+    top: 165px;
+    left: 235px;
+}
+
+/* --- BOTÓN ENTRAR --- */
+
+#btnEnviarInfo {
+    display: block;
+    margin: 25px auto 0 auto;
+    padding: 15px 40px;
+    background-color: #2C3E50;
+    color: white !important;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#btnEnviarInfo strong {
+    color: white;
+}
+
+#btnEnviarInfo:hover {
+    background-color: #1E2A38;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#btnEnviarInfo:active {
+    transform: translateY(0);
+}
+
+.Fallo {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #1E2A38;
+    text-align: center;
+    animation: aparecer 0.5s ease-out;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 600px) {
+    fieldset {
+        padding: 20px; /* Quitamos el espacio extra de la derecha */
+        width: 90%;
+    }
+
+    /* Movemos las pistas debajo de los inputs para que no se salgan de la pantalla */
+    button[id="btnPista"]:nth-of-type(1),
+    button[id="btnPista"]:nth-of-type(2) {
+        position: relative; /* Cambia de absoluto a relativo */
+        top: 0;
+        left: 0;
+        margin-top: 10px;
+        display: inline-block;
+        width: auto;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
