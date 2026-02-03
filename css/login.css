@@ -131,41 +131,50 @@ button[id="btnPista"]:nth-of-type(2) {
     to { opacity: 1; transform: translateY(0); }
 }
 @media (max-width: 600px) {
-    /* Centramos el contenedor y le damos un ancho fijo para que no choque con los botones */
+    /* Centramos el contenido principal */
     main {
         width: 100%;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         position: relative;
     }
 
+    /* Reducimos el ancho del fieldset para que quepan los botones a su lado */
     fieldset {
-        padding: 25px 65px 25px 20px; /* Dejamos 65px de espacio a la derecha */
-        width: 85%; /* No llega al 100% para que el botón de pista no se salga */
-        max-width: 280px; /* Ajuste para móviles estrechos */
+        width: 80%;
+        max-width: 250px;
+        padding: 20px;
+        margin-right: 40px; /* Desplazamos el cuadro a la izquierda para dejar sitio a los botones */
     }
 
-    /* Ajustamos los botones de pista para que sigan siendo absolutos pero en posición móvil */
+    /* Estilo mini para las pistas en móvil */
     button[id="btnPista"] {
         position: absolute;
-        left: auto; /* Reseteamos el left del PC */
-        right: 15px; /* Los pegamos al borde derecho del contenedor main */
-        width: 60px; /* Un poco más estrechos para que quepan bien */
-        padding: 5px;
-        font-size: 9px;
+        left: auto;
+        right: 15%; /* Los situamos justo al lado del fieldset */
+        width: 55px;
+        padding: 4px;
+        font-size: 8px;
+        border-radius: 4px;
     }
 
-    /* Ajuste de altura para Login (Móvil) */
+    /* ALINEACIÓN CON "LOGIN:" */
+    /* Ajustamos el top para que quede a la altura de la etiqueta LABEL */
     button[id="btnPista"]:nth-of-type(1) {
-        top: 72px; 
+        top: 52px; 
     }
 
-    /* Ajuste de altura para Contraseña (Móvil) */
+    /* ALINEACIÓN CON "CONTRASEÑA:" */
     button[id="btnPista"]:nth-of-type(2) {
-        top: 152px;
+        top: 132px;
     }
 
-    header h1 {
-        font-size: 1.8rem;
+    /* Botón entrar más cómodo para móvil */
+    #btnEnviarInfo {
+        width: 70%;
+        padding: 12px;
+        font-size: 14px;
+        margin-right: 40px; /* Para que quede alineado con el fieldset */
     }
 }
