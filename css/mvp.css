@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../imagenes/fondoMVP.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+h2 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+/* El toque rojo característico de F1 */
+h2 span {
+    color: #ff1801;
+}
+
+h4 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    text-transform: none;
+}
+
+main {
+    display: grid;
+    gap: 30px;
+    padding: 40px;
+    margin: 0 auto;
+    width: fit-content; /* El grid se ajusta al contenido */
+}
+
+/* El DIV ahora se ajusta al ancho de la imagen */
+main div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    padding: 10px; /* Espacio mínimo alrededor de la imagen */
+    width: fit-content; 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    line-height: 0; /* Elimina espacios extra debajo de la imagen */
+}
+
+img {
+    width: 250px; /* Ajusta este tamaño según tus fotos */
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Estilo para el texto que añadirás con JS */
+main div p {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: white;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+/* --- MODO PC: 3 columnas --- */
+@media (min-width: 1024px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --- MODO MÓVIL: 1 por pantalla --- */
+@media (max-width: 1023px) {
+    main {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    main div {
+        width: 90vw; /* Casi todo el ancho del móvil */
+        height: 70vh; /* Alto para que destaque */
+        justify-content: center;
+        margin: 20px auto;
+    }
+
+    img {
+        width: 100%; /* La imagen se estira al div en móvil */
+        max-width: 300px;
+    }
+}

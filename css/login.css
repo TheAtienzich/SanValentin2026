@@ -131,50 +131,23 @@ button[id="btnPista"]:nth-of-type(2) {
     to { opacity: 1; transform: translateY(0); }
 }
 @media (max-width: 600px) {
-    /* Centramos el contenido principal */
-    main {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-    }
-
-    /* Reducimos el ancho del fieldset para que quepan los botones a su lado */
     fieldset {
-        width: 80%;
-        max-width: 250px;
-        padding: 20px;
-        margin-right: 40px; /* Desplazamos el cuadro a la izquierda para dejar sitio a los botones */
+        padding: 20px; /* Quitamos el espacio extra de la derecha */
+        width: 90%;
     }
 
-    /* Estilo mini para las pistas en móvil */
-    button[id="btnPista"] {
-        position: absolute;
-        left: auto;
-        right: 15%; /* Los situamos justo al lado del fieldset */
-        width: 55px;
-        padding: 4px;
-        font-size: 8px;
-        border-radius: 4px;
-    }
-
-    /* ALINEACIÓN CON "LOGIN:" */
-    /* Ajustamos el top para que quede a la altura de la etiqueta LABEL */
-    button[id="btnPista"]:nth-of-type(1) {
-        top: 52px; 
-    }
-
-    /* ALINEACIÓN CON "CONTRASEÑA:" */
+    /* Movemos las pistas debajo de los inputs para que no se salgan de la pantalla */
+    button[id="btnPista"]:nth-of-type(1),
     button[id="btnPista"]:nth-of-type(2) {
-        top: 132px;
+        position: relative; /* Cambia de absoluto a relativo */
+        top: 0;
+        left: 0;
+        margin-top: 10px;
+        display: inline-block;
+        width: auto;
     }
 
-    /* Botón entrar más cómodo para móvil */
-    #btnEnviarInfo {
-        width: 70%;
-        padding: 12px;
-        font-size: 14px;
-        margin-right: 40px; /* Para que quede alineado con el fieldset */
+    header h1 {
+        font-size: 2rem;
     }
 }
