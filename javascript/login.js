@@ -47,6 +47,6 @@ function comprobar(){
         }, 5000);
     }
     else{
-        window.location.href = "index.html"
+        window.location.href = "index1.html"
     }
 }
