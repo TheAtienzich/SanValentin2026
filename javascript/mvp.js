@@ -28,3 +28,15 @@ function ponerPuntuacion(elemento) {
         }, 500); 
     }, 2000); // 5 segundos es mucho tiempo, lo bajé a 2s para probar
 }
+
+function irAlMVP(elemento){
+    switch(elemento.id) {
+        case "Javi":     window.location.href = "mvps/Javier.html";  break;
+        case "Sofia":    window.location.href = "mvps/Sofia.html"; break;
+        case "Miguel":   window.location.href = "mvps/Miguel.html";  break;
+        case "Jorge":    window.location.href = "mvps/Jorge.html";  break;
+        case "Pablo":    window.location.href = "mvps/Pablo.html";  break;
+        case "Martinez": window.location.href = "mvps/Martinez.html";  break;
+        default:         window.location.href = "index1.html";
+    }
+}
