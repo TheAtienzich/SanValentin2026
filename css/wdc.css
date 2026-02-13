@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../imagenes/fondoMVP.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+h2 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+h2 span {
+    color: #ff1801; /* Rojo F1 */
+}
+
+/* Estilo para resaltar FERRARI */
+.ferrari-red {
+    color: #ff1801;
+    font-weight: 900;
+}
+
+main {
+    display: flex;
+    flex-direction: column; /* Asegura el orden vertical: Debut -> Victory -> WDC */
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Estilo común para los contenedores translúcidos */
+#debut, #victory, .trophy-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    width: fit-content;
+}
+
+#debut p, #victory p {
+    margin: 10px 0;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+/* --- SECCIÓN DE COPAS --- */
+.WDCs {
+    display: flex;
+    flex-direction: row; /* En PC se ven en fila */
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.trophy-card img {
+    width: 150px; /* Tamaño controlado para que no sature */
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.trophy-card p {
+    font-weight: 900;
+    color: #ff1801; /* Año en rojo para que resalte */
+}
+
+/* --- MODO MÓVIL --- */
+@media (max-width: 1023px) {
+    h2 { font-size: 2rem; }
+
+    /* Los WDC se ponen uno debajo de otro */
+    .WDCs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ajuste para que los contenedores no ocupen el 100% pero sean cómodos */
+    #debut, #victory, .trophy-card {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .trophy-card img {
+        width: 120px; /* Un poco más pequeña en móvil */
+    }
+}

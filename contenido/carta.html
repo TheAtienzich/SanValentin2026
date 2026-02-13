@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carta</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff4e7a, #ff9ab0);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    letter-spacing: 3px;
+}
+
+header h4 {
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+main {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+main div {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+    margin-bottom: 25px;
+}
+
+main div.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+p {
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+strong {
+    color: #ffe6f0;
+}
+
+ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Corazones animados */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+        </style>
+        <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("main div");
+    
+    sections.forEach((section, index) => {
+        setTimeout(() => {
+            section.classList.add("show");
+        }, index * 1000);
+    });
+
+    // Crear corazones animados
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 20 + 15 + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+
+    setInterval(createHeart, 400);
+});
+
+        </script>
+    </head>
+    <body>
+        <header>
+            <h2>CARTA</h2>
+            <h4>Un texto que define mis sentimientos sinceros hacia ti con detalle (NO LEER ACOMPAÑADA)</h4>
+        </header>
+        <main> 
+            <div id="parrafo1">
+                <p>
+                    Cariño mio, Feliz San Valentin, que te puedo decir, la primera vez que escuche de ti
+                    simplemente eras la amiga que le gustaba la F1, y de coña le decia a Sofia, "¿Y porque
+                    no me la presentas? Que fraude de tu parte", y ya se que suena muy fantasma de mi parte...
+                </p>
+            </div>     
+            <div id="parrafo2">
+                <p>
+                    La primera vez que te conocí, pense, WOW una persona que le gustan las misma cosas que yo y
+                    encima es muy mona, porque aunque tuviera a mis mejores amigos, a ellos no les gustan el mundo
+                    del motor, entonces no tenia a nadie con quien compartir estos gustos, recuerdo que viniste con
+                    Izán y pense que que suerte tenia ese tio.
+                </p>
+            </div>     
+            <div id="parrafo3">
+                <p>
+                    Recuerdo que lo primero que te pregunte fue por tu piloto favorito, y me extrañe, porque no
+                    me esperaba que la primera persona que conozco que le gusta la F1 apoyara a Tsunoda, un piloto
+                    de una escuderia tan poco aclamada como es AlphaTauri, y pense "Que persona más única".
+                    <strong>Desde entonces te consideré como mi amiga de la F1</strong>
+                </p>
+            </div>
+            <div id="parrafo4">
+                <p>
+                    Paso el tiempo y ambos en septiembre 2025 estabamos mal, ambos salimos recientemente de una
+                    relación de gente que no nos apreció, y alrededor de principios de diciembre 2025 me di cuenta
+                    que de tanto hablar habia empezado a desarrollar una especie de conexión contigo, una conexión
+                    que queria fortalecer para asi conocerte más porque eres una persona increible.
+                </p>
+            </div>
+            <div id="parrafo5">
+                <p>
+                    BOOM, de repente en el 100 Montaditos cayo la bomba de que pensabas que te gustaba Jairo, recuerdo
+                    girarme lentamente a Miguel y decirle "<em>No ha empezado la batalla y ya he perdido la Guerra</em>, estuve unos
+                    dias un poco desanimado porque pensaba que esa conexión iba por buen camino y aunque no perdi la confianza
+                    también cosas como lo de la peruana (no sabes lo que me arrepiento)...
+                </p>
+            </div>
+            <div id="parrafo6">
+                <p>
+                    BOOM, otra bomba cayo pero no de desesperación sino de esperanza. 1 de enero de 2026, yo estaba borrachisimo
+                    y me enteré de lo que pasó, y te quiero mucho y espero que no te moleste pero grite, "VAMOS!!!", un rayo de luz
+                    me dio en la cara y simplemente pensé, No voy a aprovecharme de ella, voy a conocerla mejor y ver si esa 
+                    conexión es amor, y ahí empezo mi viaje en el cual me fui enamorando de tí, tus manías, tus gustos, tu personalidad,
+                    tu ser en general, además te veia mejorar y me dabas motivación y tu persona me han ayudado a conseguir una versión de mi
+                    que nunca me hubiera imaginado conseguir. 
+                </p>
+            </div>
+            <div id="parrafo7">
+                <p>
+                    Tu sonrisa ilumina mi corazón, cada vez que te veo siento que un peso se va de encima, porque tu eres mi mundo entero.
+                    Si según tu yo soy un 10/10, tu eres un 20/10.
+                </p>
+            </div>
+            <div id="parrafo8">
+                <p>
+                    Bueno, llegamos al 1 de febrero de 2026, en ese momento que me dijiste "que me tienes que decir el 14 que no me puedes
+                    decir hoy", cuando te dije que estaba nervioso es que era una combinación de felicidad en mi cabeza y mariposas/fuegos 
+                    artificiales en mi estomago, y ya cuando me dijiste que si me hiciste el hombre más feliz del mundo, porque se me 
+                    hizo tan subrealista que la persona más buena, única, y bonita me aceptara que ahí ya dije "Nah yo ya he ganao".
+                    No hay cosa que me sacará la sonrisa ese día.
+                </p>
+            </div>
+            <div id="parrafo9">
+                <p>Por último y para terminar, te voy a explicar el significado de cada regalo.</p>
+                <ul>
+                    <li>Flores Blancas -> Las flores blancas representan el amor puro y verdadero que siento por ti</li>
+                    <li>Ferrari SF-25 -> Coche de tu escuderia favorita y de nuestro hijo Charles Leclerc</li>
+                    <li>Carta a mano -> Un regalo donde demuestro cuanto representas para mi (mucho)</li>
+                    <li>Carta Max Verstappen -> Un detalle para que cada vez que lo veas te acuerdes de mi :D</li>
+                    <li>Web a mano -> Todo el codigo esta hecho por mi, y me ha hecho mucha ilusion hacerte esto</li>
+                </ul>
+            </div>
+        </main>
+    </body>
+</html>

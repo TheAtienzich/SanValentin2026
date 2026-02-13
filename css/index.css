@@ -107,9 +107,9 @@ nav div p {
 }
 
 /* AQUÍ PODRÁS PONER TUS IMÁGENES MÁS TARDE */
-#mvps { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../imagenes/mvpbanner.webp'); }
-#campeonatos { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../imagenes/amor.jpeg'); }
-#amor { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../imagenes/campeonatos.jpeg'); }
+#mvps { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../imagenes/fondoMVP.png'); }
+#campeonatos { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../imagenes/ver.png'); }
+#amor { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../imagenes/lec.png'); }
 #making { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../imagenes/making.webp'); }
 
 @media (max-width: 768px) {
